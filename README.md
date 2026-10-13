@@ -49,6 +49,6 @@ npm run preview
 
 ## Deploy
 
-This project is configured to deploy to GitHub Pages at `https://OSIDED.github.io/Smart-Dispatch/`.
+This project is configured to deploy to GitHub Pages at `https://conrad-uzui.github.io/Smart-Dispatch/`.
 
 npm run deploy

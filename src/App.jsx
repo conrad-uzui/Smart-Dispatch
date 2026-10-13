@@ -56,7 +56,10 @@ const router = createBrowserRouter(
       <Route path="/contact" element={<Contact />} />
       <Route path="*" element={<RedirectToHome />} />
     </Route>
-  )
+  ),
+  {
+    basename: import.meta.env.BASE_URL,
+  }
 );
 
 export default function App() {
