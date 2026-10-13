@@ -1,11 +1,17 @@
-/* 1. Add the missing Tailwind directives right here at the top */
+/* 1. Tailwind directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: max(884px, 100dvh);
   font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .material-symbols-outlined {

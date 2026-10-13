@@ -73,20 +73,47 @@ export default function Contact() {
 
           {/* Status Messages */}
           {submitStatus === "success" && (
-            <div className="bg-primary/10 border-l-4 border-primary p-4 rounded-r-lg mb-8">
-              <p className="text-primary font-medium">
-                Thank you for your message! Our team will get back to you within
-                24 hours.
-              </p>
+            <div className="bg-primary/10 border border-primary/20 p-4 rounded-xl mb-8">
+              <div className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-primary text-[20px] mt-0.5" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  check_circle
+                </span>
+                <p className="text-primary font-medium">
+                  Thanks! We'll get back to you within 24 hours. You can also
+                  reach us directly on WhatsApp at{" "}
+                  <a
+                    href="https://wa.me/233502826749"
+                    className="underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    +233 50 282 6749
+                  </a>
+                  .
+                </p>
+              </div>
             </div>
           )}
 
           {submitStatus === "error" && (
-            <div className="bg-primary/10 border-l-4 border-primary/50 p-4 rounded-r-lg mb-8">
-              <p className="text-primary/80 font-medium">
-                Oops! Something went wrong. Please try again or contact us
-                directly at support@smartdispatch.example.com
-              </p>
+            <div className="bg-error/10 border border-error/20 p-4 rounded-xl mb-8">
+              <div className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-error text-[20px] mt-0.5">
+                  error_outline
+                </span>
+                <p className="text-error font-medium">
+                  Something went wrong. Please try again or reach us directly on{" "}
+                  <a
+                    href="https://wa.me/233502826749"
+                    className="underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    WhatsApp
+                  </a>
+                  .
+                </p>
+              </div>
             </div>
           )}
 
@@ -109,7 +136,7 @@ export default function Contact() {
                       General Inquiries
                     </h3>
                     <p className="text-on-surface-variant">
-                      info@smartdispatch.example.com
+                      +233 50 282 6749
                     </p>
                   </div>
                 </div>
@@ -124,7 +151,7 @@ export default function Contact() {
                       Support
                     </h3>
                     <p className="text-on-surface-variant">
-                      support@smartdispatch.example.com
+                      Available via WhatsApp — fastest response
                     </p>
                   </div>
                 </div>

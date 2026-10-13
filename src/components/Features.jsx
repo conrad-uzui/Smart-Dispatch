@@ -1,163 +1,107 @@
 const features = [
   {
     icon: "electric_rickshaw",
-    iconColor: "text-primary",
-    bgColor: "bg-primary-container/20",
-    title: "Faster Driver Assignment",
+    accent: "primary",
+    title: "Driver assignment in under 30 seconds",
     description:
-      "Automatically find and assign an available driver within seconds.",
+      "The moment an order arrives, Smart Dispatch finds the nearest available driver and notifies them — no manual matching.",
   },
   {
     icon: "call_end",
-    iconColor: "text-secondary",
-    bgColor: "bg-secondary-container/20",
-    title: "Less Manual Coordination",
+    accent: "secondary",
+    title: "Eliminate coordination calls",
     description:
-      "Reduce constant phone calls and WhatsApp messages between staff and riders.",
+      "Stop chasing riders over the phone. Every assignment, update, and status change happens automatically over WhatsApp.",
   },
   {
     icon: "sentiment_satisfied",
-    iconColor: "text-tertiary",
-    bgColor: "bg-tertiary-container/20",
-    title: "Better Customer Experience",
+    accent: "tertiary",
+    title: "Automatic customer updates",
     description:
-      "Customers receive updates without staff manually sending messages.",
+      "Customers get confirmed, en-route, and delivered notifications without anyone on your staff typing a single message.",
   },
   {
     icon: "account_tree",
-    iconColor: "text-primary",
-    bgColor: "bg-primary-container/20",
-    title: "Organized Delivery Operations",
+    accent: "primary",
+    title: "One place for all deliveries",
     description:
-      "Orders, drivers, and delivery statuses are managed in one system instead of scattered across chats and calls.",
+      "Orders, drivers, and statuses tracked in one system — instead of scattered across WhatsApp threads and phone calls.",
   },
   {
     icon: "chat",
-    iconColor: "text-secondary",
-    bgColor: "bg-secondary-container/20",
-    title: "Built Around WhatsApp",
+    accent: "secondary",
+    title: "Zero new apps for your customers",
     description:
-      "Businesses continue using WhatsApp, eliminating the need to learn a completely new ordering system.",
+      "Customers order on the same WhatsApp they already use daily. No downloads, no logins, no friction.",
   },
   {
     icon: "trending_up",
-    iconColor: "text-tertiary",
-    bgColor: "bg-tertiary-container/20",
-    title: "Designed to Scale",
+    accent: "tertiary",
+    title: "Built to grow with you",
     description:
-      "Smart Dispatch starts with simple WhatsApp order processing today and is designed to grow into a complete delivery management platform with dashboards, mobile applications, AI automation, and analytics.",
+      "Starting with WhatsApp dispatch today and expanding into a full dashboard, mobile driver app, and AI route optimisation as you scale.",
   },
 ];
 
-const stats = [
-  {
-    icon: "speed",
-    iconColor: "text-primary",
-    value: "15m",
-    label: "Avg. Assignment Time",
-    dark: false,
-  },
-  {
-    icon: "verified_user",
-    iconColor: "text-secondary",
-    value: "99.8%",
-    label: "Order Accuracy",
-    dark: false,
-  },
-  {
-    icon: "group",
-    iconColor: "text-tertiary",
-    value: "50k+",
-    label: "Deliveries Processed",
-    dark: false,
-  },
-  {
-    icon: "thumb_up",
-    iconColor: "",
-    value: "4.9/5",
-    label: "Customer Satisfaction",
-    dark: true,
-  },
+const accentClasses = {
+  primary: { bg: "bg-primary/10", icon: "text-primary" },
+  secondary: { bg: "bg-secondary/10", icon: "text-secondary" },
+  tertiary: { bg: "bg-tertiary/10", icon: "text-tertiary" },
+};
+
+const highlights = [
+  { icon: "speed", label: "Avg. driver assignment", value: "< 30 sec" },
+  { icon: "chat", label: "Platform customers already use", value: "WhatsApp" },
+  { icon: "trending_up", label: "Versions on the roadmap", value: "4 phases" },
+  { icon: "groups", label: "Business types supported", value: "Any delivery" },
 ];
 
 export default function Features() {
   return (
-    <section className="py-24 px-container-padding bg-background relative overflow-hidden">
+    <section id="features" className="py-24 px-6 bg-[#f7f9fc] dark:bg-on-background relative overflow-hidden">
       <div className="max-w-screen-xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left: Feature List */}
-          <div>
-            <h2 className="font-headline-lg text-headline-lg mb-stack-md">
-              Why Businesses Choose Smart Dispatch
-            </h2>
-            <div className="space-y-stack-lg">
-              {features.map((f) => (
-                <div key={f.title} className="flex gap-stack-md">
-                  <div className={`${f.bgColor} p-3 rounded-lg self-start`}>
-                    <span
-                      className={`material-symbols-outlined ${f.iconColor}`}
-                    >
-                      {f.icon}
-                    </span>
-                  </div>
-                  <div>
-                    <h4 className="font-headline-md text-headline-md">
-                      {f.title}
-                    </h4>
-                    <p className="text-body-md text-on-surface-variant">
-                      {f.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+        {/* Header */}
+        <div className="text-center mb-16">
+          <span className="text-primary text-label-sm uppercase tracking-widest font-semibold">
+            Features
+          </span>
+          <h2 className="text-[32px] md:text-[38px] font-extrabold tracking-tight text-on-background mt-3 mb-4">
+            Why businesses choose Smart Dispatch
+          </h2>
+          <p className="text-body-lg text-on-surface-variant max-w-xl mx-auto">
+            Every feature is designed around one principle: your staff should
+            focus on customers, not logistics.
+          </p>
+        </div>
 
-          {/* Right: Stats Grid */}
-          <div className="grid grid-cols-2 gap-stack-md">
-            <div className="space-y-stack-md pt-12">
-              {stats.slice(0, 2).map((s) => (
-                <div
-                  key={s.label}
-                  className="bg-white p-6 rounded-2xl shadow-sm border border-outline-variant"
-                >
-                  <span
-                    className={`material-symbols-outlined ${s.iconColor} mb-2`}
-                  >
-                    {s.icon}
-                  </span>
-                  <div className="text-headline-lg font-bold">{s.value}</div>
-                  <div className="text-label-sm text-on-surface-variant">
-                    {s.label}
-                  </div>
+        {/* Features grid */}
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-16">
+          {features.map((f) => {
+            const c = accentClasses[f.accent];
+            return (
+              <div
+                key={f.title}
+                className="bg-white dark:bg-surface-container-high rounded-2xl p-6 border border-outline-variant hover:shadow-md transition-shadow"
+              >
+                <div className={`w-11 h-11 ${c.bg} rounded-xl flex items-center justify-center mb-4`}>
+                  <span className={`material-symbols-outlined ${c.icon} text-[22px]`}>{f.icon}</span>
                 </div>
-              ))}
+                <h3 className="text-[16px] font-bold text-on-background mb-2 leading-snug">{f.title}</h3>
+                <p className="text-body-md text-on-surface-variant leading-relaxed">{f.description}</p>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Honest highlights strip */}
+        <div className="bg-white dark:bg-surface-container-high rounded-2xl border border-outline-variant px-6 py-6 grid grid-cols-2 md:grid-cols-4 gap-6 divide-x-0 md:divide-x divide-outline-variant">
+          {highlights.map((h) => (
+            <div key={h.label} className="flex flex-col items-center text-center gap-1 px-4">
+              <span className="material-symbols-outlined text-primary text-[24px] mb-1">{h.icon}</span>
+              <div className="text-[22px] font-extrabold text-on-background tracking-tight">{h.value}</div>
+              <div className="text-[12px] text-on-surface-variant font-medium">{h.label}</div>
             </div>
-            <div className="space-y-stack-md">
-              {stats.slice(2).map((s) => (
-                <div
-                  key={s.label}
-                  className={
-                    s.dark
-                      ? "bg-gradient-to-br from-primary to-primary/90 text-white p-6 rounded-2xl shadow-lg border border-primary"
-                      : "bg-white p-6 rounded-2xl shadow-sm border border-outline-variant"
-                  }
-                >
-                  <span
-                    className={`material-symbols-outlined ${s.iconColor} mb-2`}
-                  >
-                    {s.icon}
-                  </span>
-                  <div className="text-headline-lg font-bold">{s.value}</div>
-                  <div
-                    className={`text-label-sm ${s.dark ? "opacity-80" : "text-on-surface-variant"}`}
-                  >
-                    {s.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
